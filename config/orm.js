@@ -44,7 +44,7 @@ class ORM {
   delete(table, delColName, delColVal){
 
     let queryString = 'DELETE FROM ?? WHERE ?? = ?'
-    return this.connection.query(querystring, [delColName,delColVal])
+    return this.connection.query(queryString, [table,delColName,delColVal])
   }
  
 }

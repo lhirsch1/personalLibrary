@@ -2,14 +2,14 @@ const orm = require('../config/orm.js');
 
 class Note {
     getBookNotes( whereVal){
-        return orm.innerJoin(['note.note'], 'books', 'notes', 'books.id', 'notes.bookId', true, 'books.title', whereVal)
+        return orm.innerJoin(['firstName', 'lastName','title', 'coverPhoto'],  'books', 'notes', 'books.id', 'bookId', 'true', 'books.title', whereVal )
     }
 
-    addBookNote(values){
-        return orm.create('notes',['note','bookId'],values)
+    addBookNotes(values){
+        return orm.create('notes',['note','bookId'],values);
     }
     deleteBookNote(id){
-        return orm.delete()
+        return orm.delete('notes','id',id)
     }
 }
 
