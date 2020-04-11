@@ -24,6 +24,7 @@ class ORM {
       
       queryString += ` WHERE ?? = ?`
       console.log("where if",queryString);
+      console.log('table 1', tableOne, ' table 2 ',tableTwo, ' tableOneCol ', tableOneCol , ' tableTwoCol ', tableTwoCol, ' where col ', whereCol, ' whereval ', whereVal)
       return this.connection.query(queryString,[tableOne,  tableTwo, tableOneCol, tableTwoCol, whereCol, whereVal])
     }
     else{

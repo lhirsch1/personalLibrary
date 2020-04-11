@@ -6,7 +6,7 @@ class Book {
     }
 
     getOneBook(whereVal){
-        return orm.innerJoin(['firstName', 'lastName','title', 'coverPhoto'],  'books', 'authors', 'authorId', 'authors.id', 'true', 'books.title', 'whereVal' )
+        return orm.innerJoin(['firstName', 'lastName','title', 'coverPhoto'],  'books', 'authors', 'authorId', 'authors.id', 'true', 'books.title', whereVal )
     }
 
     addBook(values){
